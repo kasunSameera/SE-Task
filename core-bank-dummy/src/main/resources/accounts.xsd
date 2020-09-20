@@ -1,0 +1,106 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://kasun.com/corebankdummy"
+           targetNamespace="http://kasun.com/corebankdummy"
+           elementFormDefault="qualified">
+
+
+    <xs:element name="getAccountRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="accountNo" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAccountResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="account" type="tns:account" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAccountBalanceRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="accountNo" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAccountBalanceResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="balance" type="xs:double" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="fundTransferOwnRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="accountNoSend" type="xs:int" />
+                <xs:element name="accountNoReceive" type="xs:int" />
+                <xs:element name="transferAmount" type="xs:double" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="fundTransferOwnResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="accountSend" type="tns:account" />
+                <xs:element name="accountReceive" type="tns:account" />
+                <xs:element name="transferredAmount" type="xs:double" />
+                <xs:element name="error" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="fundTransferOtherRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="accountNoSend" type="xs:int" />
+                <xs:element name="accountNoReceive" type="xs:int" />
+                <xs:element name="transferAmount" type="xs:double" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="fundTransferOtherResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="accountSend" type="tns:account" />
+                <xs:element name="accountReceive" type="tns:account" />
+                <xs:element name="transferredAmount" type="xs:double" />
+                <xs:element name="error" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getTotalAccountBalanceRequest">
+        <xs:complexType>
+            <xs:sequence>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getTotalAccountBalanceResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="totalAccountBalance" type="xs:double" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="account">
+        <xs:sequence>
+            <xs:element name="userId" type="xs:int" />
+            <xs:element name="accountNo" type="xs:int" />
+            <xs:element name="balance" type="xs:double" />
+        </xs:sequence>
+    </xs:complexType>
+
+
+
+</xs:schema>

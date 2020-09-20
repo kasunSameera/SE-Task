@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:ac="http://kasun.com/corebankdummy">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ac:getAccountBalanceRequest>
+            <ac:accountNo>123123123</ac:accountNo>
+        </ac:getAccountBalanceRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

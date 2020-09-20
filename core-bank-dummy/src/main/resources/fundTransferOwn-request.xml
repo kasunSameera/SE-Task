@@ -1,0 +1,11 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:ac="http://kasun.com/corebankdummy">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ac:fundTransferOwnRequest>
+            <ac:accountNoSend>123123123</ac:accountNoSend>
+            <ac:accountNoReceive>456456456</ac:accountNoReceive>
+            <ac:transferAmount>500</ac:transferAmount>
+        </ac:fundTransferOwnRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
